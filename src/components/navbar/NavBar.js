@@ -5,7 +5,7 @@ const NavBar = () => {
             <div>
                 <button>Ropa</button>
                 <button>Calzado</button>
-                <button>Accsesorios</button>
+                <button>Accesorios</button>
             </div>
         </nav>
     )
