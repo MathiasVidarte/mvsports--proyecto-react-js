@@ -1,6 +1,9 @@
+
 .App { 
   text-align: center;
   text-decoration: antiquewhite;
+  
+ 
   }
 
 .App-logo {
@@ -36,4 +39,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+.container {
+  background-color: black;
+  border-radius: 10px;
+  
+}
+
+
+
+.title {
+  font-size:x-large;
+  color:aliceblue;
+  
 }
