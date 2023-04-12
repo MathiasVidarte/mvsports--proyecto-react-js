@@ -1,5 +1,5 @@
-import CartWidget from "./CartWidget/CartWidget"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import CartWidget from "../CartWidget/CartWidget"
+
 
 
 const NavBar = () => {
