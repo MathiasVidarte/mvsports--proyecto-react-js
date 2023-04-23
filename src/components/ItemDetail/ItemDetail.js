@@ -1,8 +1,7 @@
-import React from 'react';
-import './Item.css';
+import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
 
-const Item = ({id, name, img, price, stock}) => {
-
+const ItemDetail = ({id, name, img, category, description, price, stock}) => {
     return (
         <article className="CardItem">
             <header className="Header">
@@ -13,21 +12,22 @@ const Item = ({id, name, img, price, stock}) => {
             <picture>
                 <img src={img} alt={name} className="ItemImg"/>
             </picture>
-            
             <section>
+                <p className="Info">
+                    Categoria: {category}
+                </p>
+                <p className="Info">
+                    Descripción: {description}
+                </p>
                 <p className="Info">
                     Precio: ${price}
                 </p>
-                <p className="Info">
-                    Stock disponible: {stock}
-                </p>
             </section>
-
             <footer className='ItemFooter'>
-                <button className='Option'>Ver detalle</button>
+                <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log ('cantidad agregada')}></ItemCount>
             </footer>
         </article>
     )
 }
 
-export default Item
+export default ItemDetail
