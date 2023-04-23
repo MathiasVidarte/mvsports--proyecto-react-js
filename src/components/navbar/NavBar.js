@@ -1,30 +1,37 @@
-import CartWidget from "../CartWidget/CartWidget"
-
-
+import { NavLink } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
-    return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">MVsports</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" href="#">Vestimenta</a>
-              <a class="nav-link" href="#">Calzado</a>
-              <a class="nav-link" href="#">Accesorios</a>
-              <a class="nav-link" href="#">Sale</a>
-            </div>
-          </div>
-          <CartWidget/>
+  return (
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">MVsports</a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <NavLink exact to={`/`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Inicio</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to={`/category/botines`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Botines</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to={`/category/calzado`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Calzado</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to={`/category/accesorios`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Accesorios</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to={`/category/sale`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Sale</NavLink>
+            </li>
+          </ul>
         </div>
-      
-        
-      
-     </nav>
-    )
+        <CartWidget/>
+      </div>
+    </nav>
+  );
 }
 
-export default NavBar
+export default NavBar;

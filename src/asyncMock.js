@@ -1,4 +1,4 @@
-const produtcs = [
+const products = [
     {
         id: '1',
         name: 'Botin de futbol Adidas x-speed',
@@ -15,7 +15,7 @@ const produtcs = [
 export const getProducts = () => {
     return new Promise((resolve) =>{
         setTimeout(() =>{
-            resolve(produtcs)
+            resolve(products)
             }, 500)
         })
     }
@@ -23,9 +23,19 @@ export const getProducts = () => {
 export const getProductsById =(productId) => {
     return new Promise ((resolve) => {
         setTimeout(() => {
-            resolve(produtcs.find(prod => prod.id === productId))
+            resolve(products.find(prod => prod.id === productId))
         }, 500)
         })
     }
+
+ export const getProductsByCategory = (category) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const filteredProducts = products.filter((prod) => prod.category === category);
+            resolve(filteredProducts);
+          }, 500);
+        });
+      };
+      
 
 
