@@ -8,13 +8,23 @@ const ItemListContainer = ({ greeting }) => {
   const { categoryId } = useParams()
 
   useEffect(() => {
-    getProductsByCategory(categoryId)
-      .then(response => {
-        setProducts(response)
-      })
-      .catch(error => {
-        console.error(error)
-      })
+    if (categoryId) {
+      getProductsByCategory(categoryId)
+        .then(response => {
+          setProducts(response)
+        })
+        .catch(error => {
+          console.error(error)
+        })
+    } else {
+      getProductsByCategory(null)
+        .then(response => {
+          setProducts(response)
+        })
+        .catch(error => {
+          console.error(error)
+        })
+    }
   }, [categoryId])
 
   return (
