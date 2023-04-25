@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getProductsByCategory } from '../../asyncMock'
+import { getProducts, getProductsByCategory } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 
@@ -8,24 +8,16 @@ const ItemListContainer = ({ greeting }) => {
   const { categoryId } = useParams()
 
   useEffect(() => {
-    if (categoryId) {
-      getProductsByCategory(categoryId)
-        .then(response => {
+   const asyncFunc = categoryId ? getProductsByCategory : getProducts
+     
+    asyncFunc(categoryId)
+       .then(response => {
           setProducts(response)
-        })
-        .catch(error => {
-          console.error(error)
-        })
-    } else {
-      getProductsByCategory(null)
-        .then(response => {
-          setProducts(response)
-        })
-        .catch(error => {
-          console.error(error)
-        })
-    }
-  }, [categoryId])
+       })
+       .catch(error => {
+        console.error(error)
+       })
+   }, [categoryId])
 
   return (
     <div>
