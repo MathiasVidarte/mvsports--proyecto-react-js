@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget'
-
+import './NavBar.css'
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">

@@ -4,11 +4,11 @@ const products = [
         name: 'Botin de futbol Adidas x-speed',
         price: 100,
         category: 'botines',
-        img:'https://images.app.goo.gl/S4b4VUA7Woi2VXy28',   
+        img:'https://assets.adidas.com/images/w_600,f_auto,q_auto/9cfd0bd8bc344663b2d4ad7b009bc720_9366/Botines_X_Speedflow.1_Terreno_Firme_Azul_GW7457_01_standard.jpg',   
         stock: 8,
         description:'Descripcion botin de futbol'
     },
-       {id:'2', name: 'Pelota basketball Spalding', price: 50, category:'accesorios', img:'https://images.app.goo.gl/MzkEvby3w7dq17AL8'},
+       {id:'2', name: 'Pelota basketball Spalding', price: 50, category:'accesorios', img:'https://http2.mlstatic.com/D_NQ_NP_648314-MLU50272804921_062022-O.jpg'},
        {id:'3', name: 'Set mancuernas + discos', price: 75, category:'accesorios', img:'https://http2.mlstatic.com/D_NQ_NP_2X_901865-MLU31241011959_062019-F.webp'},
     ]
 

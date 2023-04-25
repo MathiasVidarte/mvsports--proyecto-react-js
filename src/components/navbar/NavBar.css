@@ -1,0 +1,17 @@
+.navbar {
+    background-color:white; 
+    color:black; 
+  }
+  
+  .nav-link {
+    color: white; 
+  }
+  
+  .ActiveOption {
+    color: red; 
+  }
+
+  .nav-link:hover {
+    text-decoration: none; 
+  }
+  

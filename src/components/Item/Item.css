@@ -1,10 +1,18 @@
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .CardItem {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px #ccc;
     margin-bottom: 20px;
     padding: 20px;
+    max-width: 50%;
+   
   }
   
   .Header {
@@ -22,6 +30,7 @@
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
+    max-width: 50%;
   }
   
   .Info {
