@@ -1,17 +1,9 @@
-.navbar {
-    background-color:white; 
-    color:black; 
-  }
+.mi-navegacion .nav-link {
+  color: #333; 
+  text-decoration: none !important; 
   
-  .nav-link {
-    color: white; 
-  }
-  
-  .ActiveOption {
-    color: red; 
-  }
+}
 
-  .nav-link:hover {
-    text-decoration: none; 
-  }
-  
+.mi-navegacion .nav-link:hover {
+  color:blue;
+}
