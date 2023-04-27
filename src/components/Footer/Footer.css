@@ -16,4 +16,19 @@
     font-size: 1.5rem;
     margin: 0 0.5rem;
   }
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color:#fff; 
+  }
+  
+  .links a:hover {
+    color:blue; 
+  }
+  
   

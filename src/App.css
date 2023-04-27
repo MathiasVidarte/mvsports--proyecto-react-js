@@ -2,9 +2,10 @@
 .App { 
   text-align: center;
   text-decoration: antiquewhite;
-  background-color:#adb5bd
+  background-color:#c8d0d8
 }
 
+.banner{ background-color: black;}
 
 .App-logo {
   height: 40vmin;

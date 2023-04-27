@@ -2,10 +2,10 @@
 
 
 .CardItem {
-  border: 1px solid #ccc;
+  border: 1px solid #151414;
   border-radius: 5px;
   box-shadow: 0 0 5px #ccc;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 20px;
   max-width: 50%;
   display: flex;

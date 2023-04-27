@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <div className='banner'>.</div>
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer />}/>
