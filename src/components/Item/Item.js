@@ -19,6 +19,7 @@ const Item = ({id, name, img, price, stock}) => {
                 <p className="Precio">
                     Precio: U$S {price}
                 </p>
+                
                 <p className="Info">
                     Stock disponible: {stock}
                 </p>
