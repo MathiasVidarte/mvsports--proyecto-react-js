@@ -13,14 +13,15 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
                 <img src={img} alt={name} className="ItemImg"/>
             </picture>
             <section>
-                <p className="Info">
-                    Categoria: {category}
-                </p>
+               
                 <p className="Info">
                     Descripción: {description}
                 </p>
+                <p className="Precio">
+                    Precio: U$S {price}
+                </p>
                 <p className="Info">
-                    Precio: ${price}
+                    Stock disponible: {stock}
                 </p>
             </section>
             <footer className='ItemFooter'>
