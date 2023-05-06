@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <div className='banner'>.</div>
-      <NavBar />
+      <NavBar/>
       <Routes>
         <Route path='/' element={<ItemListContainer />}/>
         <Route path='/category/:categoryId' element={<ItemListContainer />}/>

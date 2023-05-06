@@ -17,7 +17,7 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink exact to={`/`} className="nav-link">Inicio</NavLink>
+                  <NavLink to={`/`} className="nav-link">Inicio</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to={`/category/vestimenta`} className="nav-link">Vestimenta</NavLink>
