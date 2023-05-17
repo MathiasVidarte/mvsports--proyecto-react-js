@@ -5,10 +5,13 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Footer from './components/Footer/Footer';
+
+import { CartProvider } from './context/CartContext';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <CartProvider>
       <div className='banner'>.</div>
       <NavBar/>
       <Routes>
@@ -16,7 +19,10 @@ function App() {
         <Route path='/category/:categoryId' element={<ItemListContainer />}/>
         <Route path='/item/:itemId' element={ <ItemDetailContainer />}/>
         <Route path='*' element={<h1>404 NOT FOUND</h1>} />
+       
+        
       </Routes>
+      </CartProvider>
      </BrowserRouter>
      <Footer />
     </div>

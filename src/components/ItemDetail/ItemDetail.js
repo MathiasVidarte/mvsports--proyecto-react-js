@@ -1,7 +1,18 @@
 import './ItemDetail.css'
+import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = ({id, name, img, category, description, price, stock}) => {
+    const [quantityAdded, setquantityAdded] = useState(0)
+     const handleOnAdd = (quantity) => {
+        setquantityAdded(quantity)
+           const item = {
+            id, name, price
+           }
+           addItem(item, quantity)
+     }
+    
     const previousPrice = 40; // precio anterior
    
     return (
@@ -32,7 +43,14 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
                 </p>
             </section>
             <footer className='ItemFooter'>
-                <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log ('cantidad agregada')}></ItemCount>
+                {
+                    quantityAdded > 0 ? (
+                        <Link to='/cart' className='Option'>Finalizar compra</Link>
+                    ) : (
+                        <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>
+                    )
+                }
+               
             </footer>
         </article>
     )
