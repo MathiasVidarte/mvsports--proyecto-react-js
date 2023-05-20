@@ -9,6 +9,27 @@ import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext';
 
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyB_Ggjuhqmx3kHZmfMVgPX97LLuUniWi0M",
+  authDomain: "mvsport-34228.firebaseapp.com",
+  projectId: "mvsport-34228",
+  storageBucket: "mvsport-34228.appspot.com",
+  messagingSenderId: "242949404239",
+  appId: "1:242949404239:web:f7c6fdf6816de2fc1b1c3a"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
 const App = () => {
   return (
     <div className="App">
