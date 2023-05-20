@@ -1,13 +1,13 @@
-import cart from './assets/cart.png'
+import React from "react";
+import cart from "./assets/cart.png";
 
-const CartWidget = () => {
-    return (
-        <div>
-            
-        <img src={cart} alt="cart-widget" />
-        0
-        </div>
-    )
-}
+const CartWidget = ({ itemCount }) => {
+  return (
+    <div>
+      <img src={cart} alt="cart-widget" />
+      {itemCount}
+    </div>
+  );
+};
 
-export default CartWidget
+export default CartWidget;
