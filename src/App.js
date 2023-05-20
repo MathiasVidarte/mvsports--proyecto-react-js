@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
@@ -10,20 +10,12 @@ import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext';
 
 const App = () => {
-  const [itemCount, setItemCount] = useState(0);
-
-  const handleAddToCart = (quantity) => {
-    setItemCount(itemCount + quantity);
-  };
-
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <CartProvider>
           <div className='banner'>.</div>
           <NavBar />
-          
-          
           <Routes>
             <Route path='/' element={<ItemListContainer />} />
             <Route path='/category/:categoryId' element={<ItemListContainer />} />
@@ -31,7 +23,7 @@ const App = () => {
             <Route path='/cart' element={<Cart />} />
           </Routes>
         </CartProvider>
-      </BrowserRouter>
+      </Router>
       <Footer />
     </div>
   );

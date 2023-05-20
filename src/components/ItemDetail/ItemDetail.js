@@ -7,13 +7,15 @@ import { Link } from 'react-router-dom'
 import Cart from '../Cart/Cart' // Importar el componente Cart aquí
 
 const ItemDetail = ({id, name, img, category, description, price, stock}) => {
-    const { addItem } = useContext(CartContext);
-    const [quantityAdded, setquantityAdded] = useState(0)
     
+    const [quantityAdded, setquantityAdded] = useState(0)
+   
+    const { addItem } = useContext(CartContext)
+   
     const handleOnAdd = (quantity) => {
         setquantityAdded(quantity)
         const item = {
-            id, name, price
+            id, name, price, img
         }
         addItem(item, quantity)
     }
