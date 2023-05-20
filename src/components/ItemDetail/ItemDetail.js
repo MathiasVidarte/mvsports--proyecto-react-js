@@ -4,18 +4,19 @@ import { CartContext } from '../../context/CartContext'
 import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
-import Cart from '../Cart/Cart'
+import Cart from '../Cart/Cart' // Importar el componente Cart aquí
 
 const ItemDetail = ({id, name, img, category, description, price, stock}) => {
     const { addItem } = useContext(CartContext);
     const [quantityAdded, setquantityAdded] = useState(0)
-     const handleOnAdd = (quantity) => {
+    
+    const handleOnAdd = (quantity) => {
         setquantityAdded(quantity)
-           const item = {
+        const item = {
             id, name, price
-           }
-           addItem(item, quantity)
-     }
+        }
+        addItem(item, quantity)
+    }
     
     const previousPrice = 40; // precio anterior
    
@@ -30,15 +31,16 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
                 <img src={img} alt={name} className="ItemImg"/>
             </picture>
             <section>
-               
                 <p className="Info">
                     Descripción: {description}
                 </p>
                 <p>
-                 {previousPrice && id === '5' && ( // verifica si el precio anterior existe y si el id es igual a 5
-                 <span className="previous-price">
-                    Precio anterior: U$S{previousPrice}</span>)} 
-               </p>
+                    {previousPrice && id === '5' && ( // verifica si el precio anterior existe y si el id es igual a 5
+                        <span className="previous-price">
+                            Precio anterior: U$S{previousPrice}
+                        </span>
+                    )}
+                </p>
                 <p className="Precio">
                     Precio: U$S {price}
                 </p>
@@ -47,15 +49,14 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
                 </p>
             </section>
             <footer className='ItemFooter'>
-                {
-                    quantityAdded > 0 ? (
-                        <Link to='/Cart' className="btn btn-primary btn-sm">Finalizar compra</Link>
-                    ) : (
-                        <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>
-                    )
-                }
-               
+                {quantityAdded > 0 ? (
+                   <Link to='/cart' className="btn btn-primary btn-sm">Finalizar compra</Link>
+
+                ) : (
+                    <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>
+                )}
             </footer>
+           
         </article>
     )
 }
