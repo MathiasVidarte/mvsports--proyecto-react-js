@@ -9,7 +9,7 @@ const NavBar = () => {
         <nav className="mi-navegacion navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
             <h3>
-            <NavLink exact to={`/`} className="navbar-brand">MVsports</NavLink>
+            <NavLink exact="true" to={`/`} className="navbar-brand">MVsports</NavLink>
             </h3>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@ const NavBar = () => {
               </ul>
             </div>
             <Link to="/cart"></Link>
-            <CartWidget/>
+            <CartWidget />
           </div>
         </nav>
       );

@@ -6,21 +6,22 @@ import { CartContext } from "../../context/CartContext";
 const CartWidget = () => {
   const { totalQuantity } = useContext(CartContext);
 
-  console.log("Total Quantity:", totalQuantity);
+  console.log("Total Quantity:", totalQuantity());
 
   return (
     <div>
       <Link
         to="/Cart"
         className="CartWidget"
-        style={{ display: totalQuantity > 0 ? "block" : "none" }}
+        style={{ display: totalQuantity() > 0 ? "block" : "none" }}
       >
         <img src={cart} alt="cart-widget" />
-        {totalQuantity} {/* Mostrar la cantidad de elementos en el carrito */}
+        {totalQuantity()} {/* Llamar a totalQuantity() como una función */}
       </Link>
     </div>
   );
 };
+ 
 
 export default CartWidget;
 

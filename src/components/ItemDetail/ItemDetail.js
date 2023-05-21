@@ -4,7 +4,7 @@ import { CartContext } from '../../context/CartContext'
 import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
-import Cart from '../Cart/Cart' // Importar el componente Cart aquí
+
 
 const ItemDetail = ({id, name, img, category, description, price, stock}) => {
     
