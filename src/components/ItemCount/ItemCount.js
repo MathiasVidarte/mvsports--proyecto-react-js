@@ -30,7 +30,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           +
         </button>
       </div>
-
+     
+      <br/>
+     
       <div>
         <button
           type="button"

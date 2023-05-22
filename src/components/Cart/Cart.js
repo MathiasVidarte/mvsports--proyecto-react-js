@@ -35,7 +35,7 @@ const Cart = () => {
               <CartItem key={p.id} {...p} className="cart-item" />
             ))}
           </div>
-          <h3 className="cart-total">Total: ${getTotal()}</h3>
+          <h3 className="cart-total">Total: U$S {getTotal()}</h3>
           <div className="cart-buttons">
             <button onClick={() => clearCart()} className="btn btn-secondary cart-button">
               Limpiar Carrito
