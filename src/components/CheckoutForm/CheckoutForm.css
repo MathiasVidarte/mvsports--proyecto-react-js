@@ -1,0 +1,54 @@
+.container {
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white; /* Letras en blanco */
+    height: 90vh; /* Ajusta el contenedor al 100% del alto de la pantalla */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px; /* Separación entre elementos del formulario */
+  }
+  
+  input[type="text"],
+  textarea {
+    background-color: black;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  }
+  
+  input[type="text"]::placeholder,
+  textarea::placeholder {
+    color: white;
+
+  }
+  
+  button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 200px; /* Ajusta el ancho del botón */
+    margin-top: 20px; /* Margen superior para separarlo del formulario */
+  }
+  
+  button:hover {
+    background-color: gray;
+  }
+  

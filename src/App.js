@@ -8,25 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext';
-import { initializeApp } from "firebase/app";
-import CartWidget from './components/CartWidget/CartWidget';
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyB_Ggjuhqmx3kHZmfMVgPX97LLuUniWi0M",
-  authDomain: "mvsport-34228.firebaseapp.com",
-  projectId: "mvsport-34228",
-  storageBucket: "mvsport-34228.appspot.com",
-  messagingSenderId: "242949404239",
-  appId: "1:242949404239:web:f7c6fdf6816de2fc1b1c3a"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
+import Checkout from './components/Checkout/Checkout';
 
 
 const App = () => {
@@ -36,12 +18,12 @@ const App = () => {
         <CartProvider>
           <div className='banner'>.</div>
           <NavBar />
-          <CartWidget />
           <Routes>
             <Route path='/' element={<ItemListContainer />} />
             <Route path='/category/:categoryId' element={<ItemListContainer />} />
             <Route path='/item/:itemId' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<Checkout/>} />
           </Routes>
         </CartProvider>
       </Router>

@@ -1,0 +1,28 @@
+.CartWidget {
+    position: relative;
+  }
+  
+  .CartWidget img {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .CartWidget span {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    pointer-events: none;
+    text-decoration: none;
+  }
+  
