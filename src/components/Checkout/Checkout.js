@@ -6,10 +6,11 @@ import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
 const Checkout = () => {
   const [orderId, setOrderId] = useState('');
-  const { cart, total, clearCart } = useContext(CartContext);
+  const { cart, getTotal, clearCart } = useContext(CartContext);
 
   const createOrder = async ({ name, lastname, phone, email }) => {
     try {
+      const orderTotal= getTotal();
       const objOrder = {
         buyer: {
           name,
@@ -18,7 +19,7 @@ const Checkout = () => {
           email,
         },
         items: cart,
-        total: total,
+        total: orderTotal,
         fecha: Timestamp.fromDate(new Date()),
       };
 
@@ -75,6 +76,7 @@ const Checkout = () => {
 
   if (orderId) {
     return <h1>El id de su orden es: {orderId}</h1>;
+            
   }
 
   return (
