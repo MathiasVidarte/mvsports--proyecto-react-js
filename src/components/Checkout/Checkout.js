@@ -1,20 +1,19 @@
 import { useState, useContext } from 'react';
-import { Timestamp, collection, writeBatch, addDoc, query, getDocs, where } from 'firebase/firestore';
+import { Timestamp, collection, writeBatch, addDoc, query, getDocs, where, documentId } from 'firebase/firestore';
 import { db } from '../../service/firebase/firebaseconfig';
 import { CartContext } from '../../context/CartContext';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
-
 const Checkout = () => {
   const [orderId, setOrderId] = useState('');
-
   const { cart, total, clearCart } = useContext(CartContext);
 
-  const createOrder = async ({ name, phone, email }) => {
+  const createOrder = async ({ name, surname, phone, email }) => {
     try {
       const objOrder = {
         buyer: {
           name,
+          surname,
           phone,
           email,
         },
@@ -26,7 +25,7 @@ const Checkout = () => {
       const batch = writeBatch(db);
       const outOfStock = [];
       const ids = cart.map((prod) => prod.id);
-      const productsRef = collection(db, 'productos');
+      const productsRef = collection(db, 'Productos');
 
       const productsAddedFromFirestore = await getDocs(query(productsRef, where('id', 'in', ids)));
       const { docs } = productsAddedFromFirestore;
@@ -68,7 +67,7 @@ const Checkout = () => {
   return (
     <div>
       <h1>Checkout</h1>
-      <CheckoutForm createOrder={createOrder} /> {/* Asumiendo que tienes un componente CheckoutForm para recopilar los datos del comprador */}
+      <CheckoutForm createOrder={createOrder} />
     </div>
   );
 };
