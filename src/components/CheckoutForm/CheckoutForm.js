@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import './CheckoutForm.css';
 
+
 const CheckoutForm = ({ createOrder }) => { 
   const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
+  const [lastname, setLastName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [confirmEmail, setConfirmEmail] = useState('');
@@ -25,7 +26,7 @@ const CheckoutForm = ({ createOrder }) => {
 
     const userData = {
       name,
-      surname,
+      lastname,
       phone,
       email,
     };
@@ -56,8 +57,8 @@ const CheckoutForm = ({ createOrder }) => {
           <input
             className='Input'
             type='text'
-            value={surname}
-            onChange={({ target }) => setSurname(target.value)}
+            value={lastname}
+            onChange={({ target }) => setLastName(target.value)}
           />
         </label>
 
