@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './CheckoutForm.css';
 
-
 const CheckoutForm = ({ createOrder }) => { 
   const [name, setName] = useState('');
   const [lastname, setLastName] = useState('');
@@ -14,7 +13,7 @@ const CheckoutForm = ({ createOrder }) => {
 
     // Validación del correo electrónico
     if (!validateEmail(email)) {
-      alert('Por favor ingresar una dirección de correo electrónico válida.');
+      alert('Por favor ingrese una dirección de correo electrónico válida.');
       return;
     }
 
@@ -25,12 +24,17 @@ const CheckoutForm = ({ createOrder }) => {
     }
 
     const userData = {
-      name,
-      lastname,
-      phone,
-      email,
+      name: name.trim(),
+      lastname: lastname.trim(),
+      phone: phone.trim(),
+      email: email.trim(),
     };
-    createOrder(userData); 
+
+    if (userData.name && userData.lastname && userData.phone && userData.email) {
+      createOrder(userData);
+    } else {
+      alert('Por favor, complete todos los campos.');
+    }
   };
 
   // Validación del correo electrónico
