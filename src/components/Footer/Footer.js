@@ -10,10 +10,10 @@ function Footer() {
         <a href="https://instagram.com"><FaInstagram /></a>
        </div>
        <div className='links'>
-        <a href='#'>Nosotros</a>
-        <a href='#'>Locales</a>
-        <a href='#'>Contacto</a>
-      </div>
+        <p>Nosotros</p>
+        <p>Locales</p>
+        <p>Contacto</p>
+        </div>
        
        </div>
       <p>© 2023 MVsports, Inc. Todos los derechos reservados.</p>
